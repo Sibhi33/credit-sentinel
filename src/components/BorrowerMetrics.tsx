@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Speedometer } from "@/components/ui/speedometer";
 import { ShieldCheck, AlertTriangle } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export const BorrowerMetrics = () => {
   return (
@@ -13,42 +14,50 @@ export const BorrowerMetrics = () => {
       </CardHeader>
       <CardContent className="mt-6">
         <div className="grid grid-cols-2 gap-8">
-          <div>
+          <div className="space-y-6">
             <Speedometer 
               value={85} 
               label="Reliability Score"
               colorClass="text-green-500"
+              size="md"
+              showLabels={true}
             />
             <div className="mt-4 space-y-2">
               <p className="text-sm text-muted-foreground">Key Factors:</p>
               <ul className="text-sm space-y-1">
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-green-500"></span>
-                  Consistent Repayments
+                  <span className="flex-1">Consistent Repayments</span>
+                  <span className="text-green-500 font-medium">98%</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-green-500"></span>
-                  Wallet Age: 2+ years
+                  <span className="flex-1">Wallet Age</span>
+                  <span className="text-green-500 font-medium">2+ years</span>
                 </li>
               </ul>
             </div>
           </div>
-          <div>
+          <div className="space-y-6">
             <Speedometer 
               value={25} 
               label="Risk Level"
               colorClass="text-red-500"
+              size="md"
+              showLabels={true}
             />
             <div className="mt-4 space-y-2">
               <p className="text-sm text-muted-foreground">Risk Indicators:</p>
               <ul className="text-sm space-y-1">
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-red-500"></span>
-                  Market Volatility
+                  <span className="flex-1">Market Volatility</span>
+                  <span className="text-red-500 font-medium">Medium</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-red-500"></span>
-                  Collateral Ratio
+                  <span className="flex-1">Collateral Ratio</span>
+                  <span className="text-red-500 font-medium">1.5x</span>
                 </li>
               </ul>
             </div>
